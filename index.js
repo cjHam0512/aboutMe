@@ -1,9 +1,19 @@
 const button = document.getElementById("button1");
-const h1 = document.querySelector("section > h1");
-const p = document.querySelector("section > p");
+const frame = document.querySelector("iframe");
 
-button.addEventListener("click", () => {
-    button.style.display = "none";
-    h1.style.display = "block";
-    p.style.display = "block";
-})
+let count = 0;
+button.onclick = (event) => {
+    count++;
+    if(count > 2) count = 0;
+    switch(count) {
+        case 0:
+            frame.setAttribute("src", "./html/first.html");
+            break;
+        case 1:
+            frame.setAttribute("src", "./html/second.html");
+            break;
+        case 2:
+            frame.setAttribute("src", "./html/third.html");
+            break;
+        }
+}
