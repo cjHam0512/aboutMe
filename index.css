@@ -1,0 +1,7 @@
+button {
+    display : block;
+}
+section > h1,
+section > p {
+    display : none;
+}
